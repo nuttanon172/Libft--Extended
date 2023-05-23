@@ -1,18 +1,6 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: ntairatt <ntairatt@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/07/18 17:50:24 by ntairatt          #+#    #+#              #
-#    Updated: 2023/05/19 14:12:10 by ntairatt         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 NAME = libft.a
 
-CC = gcc
+CC = cc
 
 CFLAGS = -Wall -Wextra -Werror -I$(DIR_INC)
 
@@ -38,6 +26,10 @@ RM = rm -rf
 
 OBJS = $(addprefix $(DIR_SRC)/, $(SRCS:.c=.o))
 
+%.o: %.c
+	@printf "\033[0;32mGenerating libft... %-60s\r" $@
+	@${CC} ${CFLAGS} -c $< -o $@
+
 $(NAME): $(OBJS)
 		@$(AR) $(NAME) $(OBJS)
 		@echo "-----------------------------------------------"
@@ -49,7 +41,8 @@ all: $(NAME)
 
 clean:
 		@$(RM) $(OBJS)
-		@echo "object files has removed"
+		@clear
+		@echo "object files of libft has removed"
 		
 
 fclean: clean
