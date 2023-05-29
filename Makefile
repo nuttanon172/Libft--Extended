@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/05/29 12:21:09 by ntairatt          #+#    #+#              #
+#    Updated: 2023/05/29 12:32:28 by ntairatt         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libft.a
 
 CC = cc
@@ -20,6 +32,12 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 DIR_INC = include
 DIR_SRC = src
 
+COLOR_GREEN	= \033[0;32m
+
+BOLD_GREEN	= \033[1;32m
+
+BOLD_RED = \033[1;31m
+
 AR = ar -rcs
 
 RM = rm -rf
@@ -27,12 +45,12 @@ RM = rm -rf
 OBJS = $(addprefix $(DIR_SRC)/, $(SRCS:.c=.o))
 
 %.o: %.c
-	@printf "\033[0;32mGenerating libft... %-60s\r" $@
+	@printf "$(COLOR_GREEN)Generating libft... %-30s\r" $@
 	@${CC} ${CFLAGS} -c $< -o $@
 
 $(NAME): $(OBJS)
 		@$(AR) $(NAME) $(OBJS)
-		@echo "-----------------------------------------------"
+		@echo "$(BOLD_GREEN)-----------------------------------------------"
 		@echo "libft is ready"
 		@echo "-----------------------------------------------"
 
@@ -42,17 +60,18 @@ all: $(NAME)
 clean:
 		@$(RM) $(OBJS)
 		@clear
-		@echo "object files of libft has removed"
-		
+		@echo "$(BOLD_RED)object files of libft has removed"
+
 
 fclean: clean
 		@$(RM) $(NAME)
-		@echo "libft has removed"
+		@echo "$(BOLD_RED)libft has removed"
 
 re: fclean all
 
 norm:
-	@echo "Norminette is Checking......"
+	@clear
+	@printf "$(BOLD_GREEN)Norminette is Checking......\n"
 	@echo "-----------------------------------------------"
 	@norminette $(addprefix $(DIR_SRC)/, $(SRCS))
 	@echo "-----------------------------------------------"
