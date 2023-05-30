@@ -40,7 +40,7 @@ BOLD_RED = \033[1;31m
 
 AR = ar -rcs
 
-RM = rm -rf
+RM = rm -f
 
 OBJS = $(addprefix $(DIR_SRC)/, $(SRCS:.c=.o))
 
