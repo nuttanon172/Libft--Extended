@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ntairatt <ntairatt@student.42.fr>          +#+  +:+       +#+         #
+#    By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/29 12:21:09 by ntairatt          #+#    #+#              #
-#    Updated: 2023/06/02 15:57:19 by ntairatt         ###   ########.fr        #
+#    Updated: 2023/06/02 20:15:16 by ntairatt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,15 +43,6 @@ SRCS	=	ft_is/ft_isalpha.c \
 				ft_put/ft_putstr_fd.c \
 				ft_put/ft_putendl_fd.c \
 				ft_put/ft_putnbr_fd.c \
-				ft_lst/ft_lstnew.c \
-				ft_lst/ft_lstadd_front.c \
-				ft_lst/ft_lstsize.c \
-				ft_lst/ft_lstlast.c \
-				ft_lst/ft_lstadd_back.c \
-				ft_lst/ft_lstdelone.c \
-				ft_lst/ft_lstclear.c \
-				ft_lst/ft_lstiter.c \
-				ft_lst/ft_lstmap.c \
 				gnl/get_next_line.c \
 				gnl/get_next_line_utils.c \
 				printf/ft_printf.c \
@@ -63,6 +54,16 @@ SRCS	=	ft_is/ft_isalpha.c \
 				printf/format_x.c \
 				ft_bzero.c ft_atoi.c ft_calloc.c \
 				ft_substr.c ft_split.c ft_itoa.c
+
+BONUS_SRCS = ft_lst/ft_lstnew.c \
+				ft_lst/ft_lstadd_front.c \
+				ft_lst/ft_lstsize.c \
+				ft_lst/ft_lstlast.c \
+				ft_lst/ft_lstadd_back.c \
+				ft_lst/ft_lstdelone.c \
+				ft_lst/ft_lstclear.c \
+				ft_lst/ft_lstiter.c \
+				ft_lst/ft_lstmap.c
 
 DIR_INC	=	include
 DIR_SRC	=	src
@@ -78,32 +79,37 @@ AR	=	ar -rcs
 RM	=	rm -f
 
 OBJS	=	$(addprefix $(DIR_SRC)/, $(SRCS:.c=.o))
+OBJB	=	$(addprefix $(DIR_SRC)/, $(BONUS_SRCS:.c=.o))
 
 %.o: %.c
-	@printf "$(COLOR_GREEN)Generating libft... %-30s\r" $@
+	@printf "$(COLOR_GREEN)Generating Libft... %-30s\r" $@
 	@${CC} ${CFLAGS} -c $< -o $@
 
 $(NAME): $(OBJS)
 		@$(AR) $(NAME) $(OBJS)
 		@echo "$(BOLD_GREEN)-----------------------------------------------"
-		@echo "libft is ready"
+		@echo "Libft is ready"
 		@echo "-----------------------------------------------"
 
-.PHONY: all clean fclean re norm
+.PHONY: all clean fclean re bonus norm
 all: $(NAME)
 
 clean:
-		@$(RM) $(OBJS)
-		@echo "$(BOLD_RED)object files of libft has removed"
-
+		@$(RM) $(OBJS) $(OBJB)
+		@echo "$(BOLD_RED)Object files of libft has removed"
 
 fclean:
 		@clear
-		@$(RM) $(OBJS) $(NAME)
-		@echo "$(BOLD_RED)object files of libft has removed"
-		@echo "$(BOLD_RED)libft has removed"
+		@$(RM) $(OBJS) $(OBJB) $(NAME)
+		@echo "$(BOLD_RED)Object files of libft has removed"
+		@echo "$(BOLD_RED)Libft has removed"
 
 re: fclean all
+
+bonus: $(OBJS) $(OBJB)
+		@$(AR) $(NAME) $(OBJS) $(OBJB)
+		@echo "Bonus Function Added"
+		@echo "Libft is ready"
 
 norm:
 	@clear
