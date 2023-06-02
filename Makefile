@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: ntairatt <ntairatt@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/29 12:21:09 by ntairatt          #+#    #+#              #
-#    Updated: 2023/05/29 12:32:28 by ntairatt         ###   ########.fr        #
+#    Updated: 2023/06/02 14:26:56 by ntairatt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,18 +16,53 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror -I$(DIR_INC)
 
-SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
-		ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
-		ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c \
-		ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c \
-		ft_atoi.c ft_calloc.c ft_strdup.c \
-		ft_substr.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c \
-		ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
-		get_next_line.c get_next_line_utils.c \
-		format_c.c format_d.c format_p.c format_s.c format_u.c format_x.c ft_printf.c \
-		ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
-		ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c \
-		ft_lstiter.c ft_lstmap.c
+SRCS = ft_is/ft_isalpha.c \
+		ft_is/ft_isdigit.c \
+		ft_is/ft_isalnum.c \
+		ft_is/ft_isascii.c \
+		ft_is/ft_isprint.c \
+		ft_is/ft_toupper.c \
+		ft_is/ft_tolower.c \
+		ft_mem/ft_memset.c \
+		ft_mem/ft_memcpy.c \
+		ft_mem/ft_memmove.c \
+		ft_mem/ft_memchr.c \
+		ft_mem/ft_memcmp.c \
+		ft_str/ft_strlcpy.c \
+		ft_str/ft_strlcat.c \
+		ft_str/ft_strlen.c \
+		ft_str/ft_strchr.c \
+		ft_str/ft_strrchr.c \
+		ft_str/ft_strncmp.c \
+		ft_str/ft_strnstr.c \
+		ft_str/ft_strtrim.c \
+		ft_str/ft_strmapi.c \
+		ft_str/ft_striteri.c \
+		ft_str/ft_strdup.c \
+		ft_put/ft_putchar_fd.c \
+		ft_put/ft_putstr_fd.c \
+		ft_put/ft_putendl_fd.c \
+		ft_put/ft_putnbr_fd.c \
+		ft_lst/ft_lstnew.c \
+		ft_lst/ft_lstadd_front.c \
+		ft_lst/ft_lstsize.c \
+		ft_lst/ft_lstlast.c \
+		ft_lst/ft_lstadd_back.c \
+		ft_lst/ft_lstdelone.c \
+		ft_lst/ft_lstclear.c \
+		ft_lst/ft_lstiter.c \
+		ft_lst/ft_lstmap.c \
+		gnl/get_next_line.c \
+		gnl/get_next_line_utils.c \
+		printf/ft_printf.c \
+		printf/format_c.c \
+		printf/format_d.c \
+		printf/format_p.c \
+		printf/format_s.c \
+		printf/format_u.c \
+		printf/format_x.c \
+		ft_bzero.c ft_atoi.c ft_calloc.c \
+		ft_substr.c ft_split.c ft_itoa.c
 
 DIR_INC = include
 DIR_SRC = src
