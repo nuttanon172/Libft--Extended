@@ -6,7 +6,7 @@
 #    By: ntairatt <ntairatt@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/29 12:21:09 by ntairatt          #+#    #+#              #
-#    Updated: 2023/06/02 14:26:56 by ntairatt         ###   ########.fr        #
+#    Updated: 2023/06/02 14:30:57 by ntairatt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -108,5 +108,6 @@ norm:
 	@clear
 	@printf "$(BOLD_GREEN)Norminette is Checking......\n"
 	@echo "-----------------------------------------------"
-	@norminette $(addprefix $(DIR_SRC)/, $(SRCS))
+	@norminette include
+	@norminette src
 	@echo "-----------------------------------------------"
