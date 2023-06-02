@@ -6,7 +6,7 @@
 #    By: ntairatt <ntairatt@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/29 12:21:09 by ntairatt          #+#    #+#              #
-#    Updated: 2023/06/02 14:36:57 by ntairatt         ###   ########.fr        #
+#    Updated: 2023/06/02 15:57:19 by ntairatt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,12 +94,13 @@ all: $(NAME)
 
 clean:
 		@$(RM) $(OBJS)
-		@clear
 		@echo "$(BOLD_RED)object files of libft has removed"
 
 
-fclean: clean
-		@$(RM) $(NAME)
+fclean:
+		@clear
+		@$(RM) $(OBJS) $(NAME)
+		@echo "$(BOLD_RED)object files of libft has removed"
 		@echo "$(BOLD_RED)libft has removed"
 
 re: fclean all
