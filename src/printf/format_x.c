@@ -6,7 +6,7 @@
 /*   By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 09:16:14 by ntairatt          #+#    #+#             */
-/*   Updated: 2023/03/22 08:27:10 by ntairatt         ###   ########.fr       */
+/*   Updated: 2023/06/11 12:59:31 by ntairatt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ void	format_x(unsigned int nbr, int *len, char c)
 	{
 		if (nbr >= 0 && nbr <= 9)
 			format_c(nbr + '0', len);
-		else if (nbr >= 10 && nbr <= 16 && c == 'x')
+		else if (nbr >= 10 && nbr <= 15 && c == 'x')
 			format_c((nbr - 10) + 'a', len);
-		else if (nbr >= 10 && nbr <= 16 && c == 'X')
+		else if (nbr >= 10 && nbr <= 15 && c == 'X')
 			format_c((nbr - 10) + 'A', len);
 	}
 }

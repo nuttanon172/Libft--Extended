@@ -6,7 +6,7 @@
 /*   By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 14:39:05 by ntairatt          #+#    #+#             */
-/*   Updated: 2023/05/29 12:10:33 by ntairatt         ###   ########.fr       */
+/*   Updated: 2023/06/11 12:59:23 by ntairatt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	format_p(unsigned long nbr, int *len)
 	{
 		if (nbr >= 0 && nbr <= 9)
 			format_c(nbr + '0', len);
-		else if (nbr >= 10 && nbr <= 16)
+		else if (nbr >= 10 && nbr <= 15)
 			format_c((nbr - 10) + 'a', len);
 	}
 }

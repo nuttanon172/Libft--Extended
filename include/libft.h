@@ -6,7 +6,7 @@
 /*   By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 15:50:00 by ntairatt          #+#    #+#             */
-/*   Updated: 2023/06/03 20:25:33 by ntairatt         ###   ########.fr       */
+/*   Updated: 2023/06/11 12:58:59 by ntairatt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include "ft_printf.h"
+# include "get_next_line.h"
 
 /* Part 1 - Libc fucntions -23 */
 
